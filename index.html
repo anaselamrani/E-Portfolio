@@ -3,93 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <title>Anas EL AMRANY - E-Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #19273a;
+      min-height: 100vh;
+      background: linear-gradient(120deg,#e0c3fc 0%, #8ec5fc 100%);
       margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: #e8eaf6;
+      font-family: 'Roboto', Arial, sans-serif;
+      color: #1b263b;
+      transition: background 0.5s;
     }
     .container {
-      max-width: 800px;
-      margin: 36px auto 0 auto;
-      background: #22314a;
-      border-radius: 18px;
-      box-shadow: 0 6px 32px #0004;
-      padding: 38px 38px 26px 38px;
-      min-height: 400px;
+      max-width: 880px;
+      margin: 50px auto;
+      background: rgba(255,255,255,0.95);
+      border-radius: 28px;
+      box-shadow: 0 6px 40px #aab7e700;
+      padding: 38px 44px 34px 44px;
+      min-height: 560px;
     }
     h1 {
-      color: #90caf9;
-      margin-bottom: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #4361ee;
+      margin-bottom: 0px;
       font-size: 2.7em;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
+      text-align: left;
     }
+    .headline { font-family: 'Montserrat', Arial, sans-serif; font-weight: 400; font-size: 1.08em; color: #424874; margin-bottom: 14px;}
     .header-info {
-      margin-bottom: 18px;
-      border-bottom: 1px solid #355070;
-      padding-bottom: 20px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #e0e7fc;
+      padding-bottom: 16px;
     }
-    .header-info p {
-      margin: 6px 0 2px 0;
-      color: #b8c4d1;
-    }
-    a { color: #ffd166; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
     .tabs {
       display: flex;
       justify-content: center;
-      background: #263659;
-      border-radius: 10px 10px 0 0;
-      overflow: hidden;
-      margin: 0 -38px 0 -38px;
-      box-shadow: 0 2px 6px #0002;
+      gap: 18px;
+      margin-bottom: 4px;
+      margin-top: 14px;
     }
     .tabs button {
-      flex: 1;
-      padding: 14px 8px;
-      background: none;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      background: #deeafb;
       border: none;
-      color: #b8c4d1;
-      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 12px 12px 0 0;
+      color: #495c83;
       font-size: 1.05em;
+      box-shadow: 0 4px 24px #e0c3fc33;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      opacity: 0.92;
+      transition: background 0.18s, color 0.18s, opacity 0.2s;
     }
     .tabs button.active, .tabs button:hover {
-      background: #6096ba;
+      background: #4361ee;
       color: #fff;
+      opacity: 1;
     }
     .tab-content {
       display: none;
-      background: #18263c;
-      border-radius: 0 0 10px 10px;
-      margin-bottom: 8px;
-      margin-top: 0;
-      min-height: 120px;
-      padding: 28px 17px;
-      box-shadow: 0 2px 8px #0001;
+      background: #f8fbff;
+      border-radius: 0 0 14px 14px;
+      min-height: 140px;
+      padding: 28px 23px 18px 23px;
+      margin-bottom: 14px;
+      margin-top: -4px;
+      box-shadow: 0 4px 16px #c2cadb15;
+      animation: fadeIn 0.33s;
     }
-    .tab-content.active {
-      display: block;
-      animation: fadeIn 0.4s;
-    }
+    .tab-content.active { display: block; }
     @keyframes fadeIn {
       from { opacity: 0;}
       to { opacity: 1;}
     }
-    h2 { color: #ffd166; }
+    h2 { color: #4361ee; font-family: 'Montserrat', Arial, sans-serif;}
+    a { color: #4361ee; text-decoration: none;}
+    a:hover { text-decoration: underline; }
+    .email-link {
+      font-weight: 700;
+      background: #deeafb;
+      border-radius: 5px;
+      padding: 2px 8px;
+      color: #4361ee;
+      text-decoration: none;
+      transition: background 0.25s;
+    }
+    .email-link:hover { background: #b7e3fc;}
+    @media (max-width: 700px) {
+      .container { padding:14px 2vw;}
+      .tabs { gap:6px; }
+      .tabs button { padding: 8px 6px; font-size: 0.95em;}
+      h1 { font-size: 1.67em;}
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header-info">
       <h1>Anas EL AMRANY</h1>
-      <p>Computer Science Engineering Student at ENSEEIHT</p>
-      <p>Email: <a href="mailto:elamranianas291@gmail.com">elamranianas291@gmail.com</a></p>
+      <div class="headline">Computer Science Engineering Student at ENSEEIHT</div>
+      <div style="margin-bottom:2px;">
+        Email:
+        <a href="mailto:elamranianas291@gmail.com" class="email-link">elamranianas291@gmail.com</a>
+      </div>
     </div>
-
     <div class="tabs">
       <button onclick="showTab('home')" class="active">Home</button>
       <button onclick="showTab('eng')" >Engineering Courses</button>
@@ -101,30 +120,29 @@
     
     <div id="home" class="tab-content active">
       <h2>Home</h2>
-      <p>Welcome to my portfolio. Here you’ll find my experiences, projects, and future plans.</p>
+      <p>Welcome to my portfolio! Explore my experiences, academic projects, and personal development as a computer science engineering student.</p>
     </div>
     <div id="eng" class="tab-content">
       <h2>Engineering Courses</h2>
-      <p>Details about my engineering projects, courses, and technical skills.</p>
+      <p>An overview of my engineering coursework and hands-on technical projects. <br> <em>(Replace with your details and highlights!)</em></p>
     </div>
     <div id="mobility" class="tab-content">
       <h2>Mobility</h2>
-      <p>Reflections and information about any mobility or study abroad experiences.</p>
+      <p>Reflections and information about study abroad, exchange, or mobility programs. <br> <em>(Add your plans or experiences.)</em></p>
     </div>
     <div id="civic" class="tab-content">
       <h2>Civic Engagement</h2>
-      <p>Description of civic or community engagement activities.</p>
+      <p>My involvement in civic, social, and community activities. <br> <em>(Describe your participation or ideas here.)</em></p>
     </div>
     <div id="sports" class="tab-content">
       <h2>Sports & Activities</h2>
-      <p>Extracurricular involvement, sports, and other interests.</p>
+      <p>Extracurricular interests, clubs, and sports. <br> <em>(Share your hobbies and passions.)</em></p>
     </div>
     <div id="career" class="tab-content">
       <h2>Career Development</h2>
-      <p>My CV, career interests, and professional growth plans.</p>
+      <p>CV highlights, professional ambitions, and career growth plans. <br> <em>(Add your LinkedIn or upload your CV.)</em></p>
     </div>
   </div>
-
   <script>
     function showTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -136,10 +154,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
