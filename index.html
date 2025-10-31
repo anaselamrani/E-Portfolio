@@ -7,23 +7,15 @@
   <style>
     html, body { margin: 0; padding: 0; min-height: 100vh; background: #181c1f; }
     body { font-family: 'Roboto', Arial, sans-serif; }
-
     .section {
-      min-height: 100vh;
-      width: 100vw;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background: #232c38;
-      cursor: pointer;
-      overflow: hidden;
+      min-height: 100vh; width: 100vw; position: relative;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; background: #232c38;
+      cursor: pointer; overflow: hidden;
     }
     .section .bgimg {
       position: absolute; top:0; left:0; width:100vw; height:100vh; z-index:1;
-      background-position: center;
-      background-size: cover;
+      background-position: center; background-size: cover;
       filter: blur(0.3px) brightness(0.84) saturate(1.07);
       transition: filter 0.5s;
     }
@@ -100,9 +92,7 @@
       outline: none;
     }
     .tab-content .close-btn:hover {
-      background: #a4161a;
-      color: #fff;
-      border-color: #fff;
+      background: #a4161a; color: #fff; border-color: #fff;
       transform: scale(1.1);
     }
     .tab-content .close-btn:focus {
@@ -143,14 +133,18 @@
         I'm Anas EL AMRANY, Computer Science Engineering Student at ENSEEIHT.<br>
         Explore this interactive portfolio to access my CVs in French and English:
         <br>
-        <a href="CV-Francais.pdf" target="_blank">Download my CV (French)</a>
+        <a href="CV_French.pdf" target="_blank">Download my CV (French)</a>
         <br>
-        <a href="CV-English.pdf" target="_blank">Download my CV (English)</a>
+        <a href="CV_English.pdf" target="_blank">Download my CV (English)</a>
         <br>
         And watch my elevator pitch video.
         <br>
         This ePortfolio showcases my development in engineering, connects with professors and employers, and highlights my academic journey.
       </p>
+      <video controls width="100%" style="margin:24px 0;max-width:420px;display:block;">
+        <source src="UVP.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
     <div class="hint">Click to see more</div>
   </div>
@@ -217,7 +211,7 @@
       <p>
         You can view and download my CV in English:
         <br>
-        <a href="CV-English.pdf" target="_blank">Download my CV (English)</a>
+        <a href="CV_English.pdf" target="_blank">Download my CV (English)</a>
         <br>
         My primary career interests lie in computer science, particularly artificial intelligence and related emerging domains. In the future, I hope to gain experience in industry and potentially create my own startup company.
       </p>
@@ -237,7 +231,6 @@
   </script>
 </body>
 </html>
-
 
 
 
