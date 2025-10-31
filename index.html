@@ -2,158 +2,202 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Anas EL AMRANY - E-Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900;700;500&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+  <title>Anas EL AMRANY - Scrollable E-Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:900,700,400|Roboto:400,300&display=swap" rel="stylesheet">
   <style>
+    html, body {
+      margin: 0; padding: 0;
+      min-height:100vh;
+      scroll-behavior: smooth;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
     body {
-      background: #fafafb;
+      background: #191d22;
+    }
+    .section {
       min-height: 100vh;
-      margin: 0;
-      font-family: 'Karla', Arial, sans-serif;
-      display: flex; align-items: flex-start; justify-content: center;
-      min-height: 100svh;
-    }
-    .bg-banner {
       width: 100vw;
-      min-height: 320px;
-      height: 38vh;
-      background: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      position: absolute;
-      top: 0; left: 0; z-index: 1; 
-      filter: blur(2px) brightness(0.6);
-    }
-    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       position: relative;
-      width: 95vw; max-width: 850px;
-      background: rgba(255,255,255,0.97);
-      border-radius: 28px;
-      box-shadow: 0 12px 60px #beb7f666, 0 4px 24px #8892fa44;
-      padding: 42px 44px 30px 44px;
-      margin-top: 62px;
-      z-index: 2;
-      min-height: 480px;
-      backdrop-filter: blur(0.5px);
-      overflow-x: hidden;
-    }
-    .header-info {
-      text-align: center;
-      padding-bottom: 15px;
-      border-bottom: 1.5px solid #ecedf6;
-      margin-bottom: 26px;
-    }
-    h1 {
-      font-family: 'Montserrat', Arial, sans-serif; font-weight: 900;
-      color: #6457fa; font-size: 2.85em; margin: 0 0 2px 0; letter-spacing: 2px;
-      text-shadow: 0 2px 10px #cfc7ef22;
-    }
-    .headline {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 500; font-size: 1.13em; color: #253468; margin-bottom: 12px;
-      letter-spacing: .7px;
-    }
-    .header-info a {
-      color: #f67280; font-weight: 700;
-      background: #fbeee7; border-radius: 7px; padding: 2px 11px 2px 7px;
-      text-decoration: none; font-size: 1em; transition: background 0.2s;
-      display: inline-block;
-    }
-    .header-info a:hover { background: #fad4d4;}
-    /* Scrollable horizontal tabs */
-    .tabs {
-      display: flex; overflow-x: auto; gap: 18px; margin: 8px -44px 3px -44px;
-      padding: 0 20px 0 20px; scroll-snap-type: x mandatory;
-      background: none;
-    }
-    .tabs button {
-      scroll-snap-align: start;
-      font-family: 'Montserrat', Arial, sans-serif; font-weight: 700;
-      background: #e9eaff; border: none; outline: none;
-      padding: 16px 32px 13px 32px; border-radius: 16px;
-      color: #232d47; font-size: 1.14em; transition: background 0.18s, color 0.18s;
-      margin-bottom: 0; cursor: pointer; opacity: 0.92;
-      white-space: nowrap; letter-spacing: .7px;
-      min-width: 175px;
-    }
-    .tabs button.active,
-    .tabs button:focus, .tabs button:hover {
-      background: #8f96e8;
+      cursor: pointer;
       color: #fff;
-      opacity: 1;
+      transition: background 0.6s;
+    }
+    .section .overlay {
+      position: absolute; top:0; left:0; width:100vw; height:100vh; z-index:0;
+      background: rgba(16,20,32,0.26);
+      mix-blend-mode: multiply;
+      pointer-events:none;
+    }
+    .tab-title {
+      position: relative; z-index:3;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: clamp(2.4em, 7vw, 5em);
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-align:center;
+      margin-bottom: 0.3em;
+      text-shadow: 0 4px 32px #191d2299, 0 1px 0 #222;
+      background: rgba(37,33,50,0.34);
+      border-radius: 25px;
+      padding: 20px 26px 18px 26px;
+      backdrop-filter: blur(3px);
+      box-shadow: 0 6px 36px #0003;
     }
     .tab-content {
-      display: none; background: #fcfcff;
-      border-radius: 0 0 18px 18px; min-height: 140px;
-      padding: 34px 24px 25px 34px; margin-top: 8px; margin-bottom: 10px;
-      box-shadow: 0 4px 14px #8892fa12;
-      animation: fadeIn 0.32s;
+      position: relative; z-index:5;
+      max-width: 650px;
+      background: rgba(245,245,255,0.90);
+      color: #222;
+      font-size: 1.16em;
+      margin: 0 auto;
+      margin-top: 36px;
+      border-radius: 24px;
+      box-shadow: 0 10px 60px #0005;
+      padding: 36px 38px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.65s, transform 0.59s;
+      transform: translateY(60px) scale(0.98);
     }
-    .tab-content.active { display: block;}
-    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-    h2 {
-      color: #f67280; font-family: 'Montserrat', Arial, sans-serif; margin-top: 0;
-      display: flex; align-items: center; font-size: 2em; margin-bottom: 16px;
+    .section.expanded .tab-content {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0) scale(1.01);
     }
-    .feature-emoji { font-size: 1.5em; margin-right: 13px; opacity: .85;}
-    a { color: #6c63ff; text-decoration: none;}
-    a:hover { text-decoration: underline;}
-    @media (max-width: 800px) {
-      .container { padding:12px 2vw;}
-      .tabs button { font-size: 0.88em; padding: 10px 18px; min-width: 135px;}
-      h1 { font-size: 1.65em;}
+    .hint {
+      position: absolute; bottom:32px; left:50%; transform:translateX(-50%);
+      color: #fff; font-size: 1.09em; z-index: 8;
+      opacity: 0.7; padding: 7px 15px;
+      border-radius: 18px;
+      background:rgba(20,23,33,0.29);
+      letter-spacing: 1px;
+    }
+    /* Background images unique for each section */
+    .section.home { background:
+      url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; }
+    .section.eng { background:
+      url('https://images.unsplash.com/photo-1468779060412-f5b1f0647b36?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; }
+    .section.mobility { background:
+      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; }
+    .section.civic { background:
+      url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;}
+    .section.sports { background:
+      url('https://images.unsplash.com/photo-1461897104016-0b3b0bf1cfb6?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;}
+    .section.career { background:
+      url('https://images.unsplash.com/photo-1450101499163-c8848c66eeff?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;}
+    /* Show tab content on click */
+    .tab-content .close-btn {
+      position:absolute;top:16px;right:22px;font-size:1.22em;
+      color:#4361ee;background:none;border:none;cursor:pointer;font-weight:700;
+      background:rgba(220,220,245,0.58);
+      border-radius:12px;padding:2px 14px;transition:background 0.15s;
+    }
+    .tab-content .close-btn:hover { background:#ffd6d6;}
+    /* Responsive styles */
+    @media (max-width: 700px) {
+      .tab-content { max-width: 95vw; padding:16vw 4vw;}
+      .tab-title {font-size:7vw;padding:18px;}
     }
   </style>
 </head>
 <body>
-  <div class="bg-banner"></div>
-  <div class="container">
-    <div class="header-info">
-      <h1><span class="feature-emoji">👋</span>Anas EL AMRANY</h1>
-      <div class="headline">Computer Science Engineering Student at ENSEEIHT</div>
-      <div>
-        Email: <a href="mailto:elamranianas291@gmail.com">elamranianas291@gmail.com</a>
-      </div>
+  <div class="section home" onclick="expandSection(this)">
+    <div class="overlay"></div>
+    <div class="tab-title">Home</div>
+    <div class="tab-content">
+      <button class="close-btn" onclick="closeSection(event)">× Close</button>
+      <h2>Welcome!</h2>
+      <p>
+        I'm Anas EL AMRANY, Computer Science Engineering Student at ENSEEIHT.<br>
+        Discover projects, skills, and academic achievements on this scrollable, interactive portfolio.
+      </p>
     </div>
-    <div class="tabs" tabindex="0">
-      <button onclick="showTab('home')" class="active">Home</button>
-      <button onclick="showTab('eng')" >Engineering Courses</button>
-      <button onclick="showTab('mobility')">Mobility</button>
-      <button onclick="showTab('civic')">Civic Engagement</button>
-      <button onclick="showTab('sports')">Sports & Activities</button>
-      <button onclick="showTab('career')">Career Development</button>
+    <div class="hint">Click to see more</div>
+  </div>
+  <div class="section eng" onclick="expandSection(this)">
+    <div class="overlay"></div>
+    <div class="tab-title">Engineering Courses</div>
+    <div class="tab-content">
+      <button class="close-btn" onclick="closeSection(event)">× Close</button>
+      <h2>Engineering Projects</h2>
+      <p>
+        Selected technical coursework and hands-on programming.<br>
+        - Ada interactive multiplication tables tool<br>
+        - Project-based learning in modeling/simulation<br>
+        - Studies in algorithms, data structures, and artificial intelligence.
+      </p>
     </div>
-    <div id="home" class="tab-content active">
-      <h2><span class="feature-emoji">🏡</span>Home</h2>
-      <p>Welcome to my portfolio! Explore my projects, skills, and experiences as a computer science engineering student.</p>
+    <div class="hint">Click to see more</div>
+  </div>
+  <div class="section mobility" onclick="expandSection(this)">
+    <div class="overlay"></div>
+    <div class="tab-title">Mobility</div>
+    <div class="tab-content">
+      <button class="close-btn" onclick="closeSection(event)">× Close</button>
+      <h2>Mobility & Exchange</h2>
+      <p>
+        Planning for potential international experiences or exchanges.<br>
+        Reflections on teamwork, adaptation, language, and global opportunities.
+      </p>
     </div>
-    <div id="eng" class="tab-content">
-      <h2><span class="feature-emoji">💻</span>Engineering Courses</h2>
-      <p>An overview of my technical coursework and hands-on engineering projects.</p>
+    <div class="hint">Click to see more</div>
+  </div>
+  <div class="section civic" onclick="expandSection(this)">
+    <div class="overlay"></div>
+    <div class="tab-title">Civic Engagement</div>
+    <div class="tab-content">
+      <button class="close-btn" onclick="closeSection(event)">× Close</button>
+      <h2>Civic Engagement</h2>
+      <p>
+        Involvement in social, creative, and environmental initiatives.<br>
+        Example: "King Kong Trial" theatre project, climate mural, collaborative workshops.
+      </p>
     </div>
-    <div id="mobility" class="tab-content">
-      <h2><span class="feature-emoji">🌍</span>Mobility</h2>
-      <p>Reflections and details about study abroad, exchange, or research programs.</p>
+    <div class="hint">Click to see more</div>
+  </div>
+  <div class="section sports" onclick="expandSection(this)">
+    <div class="overlay"></div>
+    <div class="tab-title">Sports & Activities</div>
+    <div class="tab-content">
+      <button class="close-btn" onclick="closeSection(event)">× Close</button>
+      <h2>Extracurricular Life</h2>
+      <p>
+        Participation in sports, clubs, and personal development.<br>
+        <br>
+        Passionate about teamwork, energy, and diverse interests beyond academics.
+      </p>
     </div>
-    <div id="civic" class="tab-content">
-      <h2><span class="feature-emoji">🤝</span>Civic Engagement</h2>
-      <p>Highlights of my civic, social, and volunteer activities.</p>
+    <div class="hint">Click to see more</div>
+  </div>
+  <div class="section career" onclick="expandSection(this)">
+    <div class="overlay"></div>
+    <div class="tab-title">Career Development</div>
+    <div class="tab-content">
+      <button class="close-btn" onclick="closeSection(event)">× Close</button>
+      <h2>Professional Growth</h2>
+      <p>
+        Explore my CV, career interests, and ambitions.<br>
+        Plans for internships, professional connections, and future areas in computer science.
+      </p>
     </div>
-    <div id="sports" class="tab-content">
-      <h2><span class="feature-emoji">🏆</span>Sports & Activities</h2>
-      <p>Extracurricular interests, clubs, and personal passions.</p>
-    </div>
-    <div id="career" class="tab-content">
-      <h2><span class="feature-emoji">🚀</span>Career Development</h2>
-      <p>CV summary, career interests, and professional growth plans.</p>
-    </div>
+    <div class="hint">Click to see more</div>
   </div>
   <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-      document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      const btnIndex = {home:0, eng:1, mobility:2, civic:3, sports:4, career:5}[tabId];
-      document.querySelectorAll('.tabs button')[btnIndex].classList.add('active');
+    function expandSection(section) {
+      document.querySelectorAll(".section").forEach(sec => sec.classList.remove("expanded"));
+      section.classList.add("expanded");
+      section.scrollIntoView({behavior:"smooth"});
+    }
+    function closeSection(event) {
+      event.stopPropagation();
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('expanded'));
     }
   </script>
 </body>
 </html>
+
+
