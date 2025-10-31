@@ -27,7 +27,7 @@
       filter: blur(0.3px) brightness(0.84) saturate(1.07);
       transition: filter 0.5s;
     }
-    /* Unique background for each tab using Imgur images */
+    /* High-res Imgur backgrounds */
     .section.home .bgimg {
       background-image: url('https://i.imgur.com/xl0t1Y2.jpeg');
     }
@@ -46,7 +46,6 @@
     .section.career .bgimg {
       background-image: url('https://i.imgur.com/hs9p7lW.jpeg');
     }
-
     .tab-title {
       position: relative; z-index:4; color: #fff;
       font-family: 'Montserrat', Arial, sans-serif; font-weight: 900;
@@ -60,7 +59,6 @@
       background: rgba(38, 41, 56, 0.38);
       box-shadow: 0 6px 32px #10121945;
       transition: opacity 0.66s, filter 0.56s;
-      will-change: opacity;
       cursor: pointer;
     }
     .section.expanded .tab-title {
@@ -69,62 +67,60 @@
       pointer-events: none;
     }
 
+    /* Updated tab-content style */
     .tab-content {
       position: absolute;
       left: 50%; top: 52%;
-      transform: translate(-50%, -54%) scale(0.1);
-      width: 480px; max-width: 98vw;
-      min-height: 145px;
+      transform: translate(-50%, -54%) scale(0.95);
+      width: 480px; max-width: 92vw;
+      min-height: 135px;
       opacity: 0;
       z-index: 10;
-      border-radius: 34px 90px 44px 90px / 75px 34px 90px 55px;
-      background: linear-gradient(120deg,rgba(255,255,255,0.60) 65%,rgba(196,240,255,0.46));
-      box-shadow: 0 16px 88px #0007, 0 1px 32px #629ae033;
-      border: 3.5px solid;
-      border-image: linear-gradient(135deg, #6c63ff 25%, #88ffd8 80%, #fc46aa 100%) 1;
-      backdrop-filter: blur(16px) saturate(1.09);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 8px 40px #152c3a47, 0 1px 8px #212c3a22;
+      border: 1.5px solid #e5ecf1;
+      backdrop-filter: blur(18px) saturate(1.15);
       display: flex; flex-direction: column; align-items: center;
-      padding: 56px 38px 36px 38px;
+      padding: 48px 32px 28px 32px;
       pointer-events: none;
       transition:
-        opacity 0.57s cubic-bezier(0.5,1,0.89,1),
-        transform 0.62s cubic-bezier(.41,1.5,.83,1),
-        border-radius 0.45s cubic-bezier(.61,1.7,.93,1),
-        box-shadow 0.45s;
+        opacity 0.62s cubic-bezier(.41,1.5,.83,1),
+        transform 0.55s cubic-bezier(.41,1.4,.92,1.05),
+        border-radius 0.33s cubic-bezier(.26,1.14,.43,1),
+        box-shadow 0.33s;
       will-change: transform, opacity;
     }
     .section.expanded .tab-content {
       opacity: 1;
       transform: translate(-50%, -54%) scale(1);
-      pointer-events: all;
-      border-radius: 75px 180px 95px 150px / 140px 64px 135px 115px;
-      box-shadow: 0 9px 64px #000b, 0 1px 32px #44c7e055;
+      box-shadow: 0 12px 60px #1a243e37, 0 2px 16px #283c5a25;
     }
     .tab-content h2 {
-      color: #3a398a; font-family: 'Montserrat',Arial,sans-serif;
-      font-size: 2.1em; margin-bottom: 16px; margin-top:0;
-      letter-spacing: .7px; text-align: center;
-      text-shadow: 0 1px 6px #fff8;
+      color: #263368; font-family: 'Montserrat',Arial,sans-serif;
+      font-size: 2em; margin-bottom: 18px; margin-top:0;
+      letter-spacing: .5px; text-align: center;
+      font-weight: 900;
     }
     .tab-content .close-btn {
-      position: absolute; top: 16px; right: 22px; width: 38px; height: 38px;
-      border-radius: 50%; border: 2px solid #6c63ff;
-      background: rgba(228,230,252,0.9);
-      color: #6c63ff; font-size: 1.32em;
-      box-shadow: 0 2px 16px #a0c6e066;
+      position: absolute; top: 18px; right: 22px; width: 34px; height: 34px;
+      border-radius: 50%; border: 1.5px solid #c7d5e2;
+      background: #f6f9fbef;
+      color: #233c72; font-size: 1.2em;
+      box-shadow: 0 2px 10px #a0c6e035;
       cursor: pointer; display: flex; align-items: center; justify-content: center;
       transition: background 0.17s, color 0.17s, border 0.22s;
-      font-weight: 800; z-index: 30;
+      font-weight: 700; z-index: 30;
     }
     .tab-content .close-btn:hover {
-      background: #fc46aa; color: #fff; border-color: #4499ff;
-      transform: scale(1.07);
+      background: #dde6fa; color: #314e99; border-color: #a4c8f6;
+      transform: scale(1.1);
     }
     .tab-content p, .tab-content ul {
-      font-size: 1.15em; color: #222; margin:18px 0 0 0; text-align:center;
-      line-height: 1.58;
+      font-size: 1.15em; color: #252d40; text-align:left;
+      margin:12px 0 0 0; line-height: 1.57;
     }
-    .tab-content ul { padding: 0 0 0 1.3em; text-align: left;}
+    .tab-content ul { padding-left: 0.8em;}
     .hint {
       position: absolute; bottom:24px; left:50%; transform:translateX(-50%);
       color: #fff; font-size: 1.09em; z-index: 8;
@@ -237,8 +233,6 @@
   </script>
 </body>
 </html>
-
-
 
 
 
