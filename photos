@@ -1,6 +1,6 @@
-.section.home .bgimg { background-image: url('1-2.jpg'); }
-.section.eng .bgimg { background-image: url('2.jpg'); }
-.section.mobility .bgimg { background-image: url('3.jpg'); }
-.section.civic .bgimg { background-image: url('4.jpg'); }
-.section.sports .bgimg { background-image: url('5.jpg'); }
-.section.career .bgimg { background-image: url('6.jpg'); }
+.section.home .bgimg { background-image: url('fotos/1-2.jpg'); }
+.section.eng .bgimg { background-image: url('fotos/2.jpg'); }
+.section.mobility .bgimg { background-image: url('fotos/3.jpg'); }
+.section.civic .bgimg { background-image: url('fotos/4.jpg'); }
+.section.sports .bgimg { background-image: url('fotos/5.jpg'); }
+.section.career .bgimg { background-image: url('fotos/6.jpg'); }
