@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Anas EL AMRANY - E-Portfolio Scroll Reveal</title>
+  <title>Anas EL AMRANY - E-Portfolio Scroll Reveal (Glassmorphism)</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:900,700,400|Roboto:400,300&display=swap" rel="stylesheet">
   <style>
     html, body { margin: 0; padding: 0; min-height: 100vh; background: #181c1f; }
@@ -27,7 +28,7 @@
       filter: blur(0.3px) brightness(0.84) saturate(1.07);
       transition: filter 0.5s;
     }
-    /* Change background for each tab below */
+    /* Unique background for each tab below */
     .section.home .bgimg { background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1200&q=80'); }
     .section.eng .bgimg { background-image: url('https://images.unsplash.com/photo-1468779060412-f5b1f0647b36?auto=format&fit=crop&w=1200&q=80'); }
     .section.mobility .bgimg { background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'); }
@@ -39,66 +40,88 @@
       position: relative; z-index:4; color: #fff;
       font-family: 'Montserrat', Arial, sans-serif; font-weight: 900;
       text-shadow: 0 6px 32px #181c1f60, 0 1px 0 #222;
-      font-size: clamp(2.2em, 7vw, 5.2em);
+      font-size: clamp(2.2em, 7vw, 4.1em);
       letter-spacing: 2px;
       text-align: center;
       margin-bottom: 0.25em;
       border-radius: 100vw;
       padding: 24px 36px;
-      background: rgba(38, 41, 56, 0.36);
-      box-shadow: 0 6px 32px #10121955;
-      transition: opacity 0.6s, filter 0.5s;
+      background: rgba(38, 41, 56, 0.38);
+      box-shadow: 0 6px 32px #10121945;
+      transition: opacity 0.66s, filter 0.56s;
       will-change: opacity;
+      cursor: pointer;
     }
     .section.expanded .tab-title {
-      opacity: 0.04;
-      filter: blur(10px);
+      opacity: 0.01;
+      filter: blur(30px);
       pointer-events: none;
     }
+
+    /* Sophisticated card: glassmorphism, neon border, slight shadow, soft curves */
     .tab-content {
       position: absolute;
       left: 50%; top: 52%;
-      transform: translate(-50%, -54%) scale(0.12);
-      width: 440px; max-width: 84vw;
-      min-height: 120px;
+      transform: translate(-50%, -54%) scale(0.1);
+      width: 480px; max-width: 98vw;
+      min-height: 145px;
       opacity: 0;
       z-index: 10;
-      border-radius: 48vw / 30vw;
-      background: rgba(245,245,255,0.88);
-      box-shadow: 0 14px 80px #0005, 0 2px 24px #6a8ee088;
-      color: #222;
+      border-radius: 34px 90px 44px 90px / 75px 34px 90px 55px;
+      /* Glass and color border effect */
+      background: linear-gradient(120deg,rgba(255,255,255,0.60) 65%,rgba(196,240,255,0.46));
+      box-shadow: 0 16px 88px #0007, 0 1px 32px #629ae033;
+      border: 3.5px solid;
+      border-image: linear-gradient(135deg, #6c63ff 25%, #88ffd8 80%, #fc46aa 100%) 1;
+      /* Glassmorphism */
+      backdrop-filter: blur(16px) saturate(1.09);
+      /* Animations */
       display: flex; flex-direction: column; align-items: center;
-      padding: 38px 34px 28px 34px;
+      padding: 56px 38px 36px 38px;
       pointer-events: none;
       transition:
         opacity 0.57s cubic-bezier(0.5,1,0.89,1),
-        transform 0.59s cubic-bezier(.41,1.5,.83,1),
-        box-shadow 0.5s;
+        transform 0.62s cubic-bezier(.41,1.5,.83,1),
+        border-radius 0.45s cubic-bezier(.61,1.7,.93,1),
+        box-shadow 0.45s;
       will-change: transform, opacity;
     }
     .section.expanded .tab-content {
       opacity: 1;
       transform: translate(-50%, -54%) scale(1);
       pointer-events: all;
+      /* On expand, morph to a larger rounder glass shape */
+      border-radius: 75px 180px 95px 150px / 140px 64px 135px 115px;
+      box-shadow: 0 9px 64px #000b, 0 1px 32px #44c7e055;
     }
     .tab-content h2 {
       color: #3a398a; font-family: 'Montserrat',Arial,sans-serif;
-      font-size: 2em;margin-bottom: 16px;margin-top:0;
-      letter-spacing: .6px;
-      text-align: center;
-      text-shadow: 0 1px 4px #fff6;
+      font-size: 2.1em; margin-bottom: 16px; margin-top:0;
+      letter-spacing: .7px; text-align: center;
+      text-shadow: 0 1px 6px #fff8;
     }
     .tab-content .close-btn {
-      position: absolute; top: 15px; right: 24px; font-size: 1.42em;
-      color: #6c63ff; background: rgba(220,220,245,0.58); border: none;
-      border-radius: 16px; padding: 2px 18px 2px 13px; cursor: pointer; font-weight: 700;
-      transition: background 0.18s;
-      z-index: 58;
+      position: absolute; top: 16px; right: 22px; width: 38px; height: 38px;
+      border-radius: 50%; border: 2px solid #6c63ff;
+      background: rgba(228,230,252,0.9);
+      color: #6c63ff; font-size: 1.32em;
+      box-shadow: 0 2px 16px #a0c6e066;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.17s, color 0.17s, border 0.22s;
+      font-weight: 800; z-index: 30;
     }
-    .tab-content .close-btn:hover { background: #fad6eb; }
+    .tab-content .close-btn:hover {
+      background: #fc46aa; color: #fff; border-color: #4499ff;
+      transform: scale(1.07);
+    }
+    .tab-content p, .tab-content ul {
+      font-size: 1.15em; color: #222; margin:18px 0 0 0; text-align:center;
+      line-height: 1.58;
+    }
+    .tab-content ul { padding: 0 0 0 1.3em; text-align: left;}
     .hint {
       position: absolute; bottom:24px; left:50%; transform:translateX(-50%);
-      color: #fff; font-size: 1.06em; z-index: 8;
+      color: #fff; font-size: 1.09em; z-index: 8;
       opacity: 0.8; padding: 10px 18px;
       border-radius: 24px;
       background: rgba(20,23,33,0.30); letter-spacing: 1px;
@@ -106,7 +129,7 @@
       font-family: 'Montserrat',Arial,sans-serif;
     }
     @media (max-width:700px) {
-      .tab-content { width: 99vw; padding:9vw 2vw; border-radius: 44vw/32vw;}
+      .tab-content { width: 99vw; padding:10vw 2vw; min-width:unset; }
       .tab-content h2 {font-size: 6vw;}
       .tab-title {padding: 18px;}
       .hint {font-size: 3vw;}
@@ -118,7 +141,7 @@
     <div class="bgimg"></div>
     <div class="tab-title">Home</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)">×</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
       <h2>Welcome!</h2>
       <p>
         I'm Anas EL AMRANY, Computer Science Engineering Student at ENSEEIHT.<br>
@@ -131,13 +154,13 @@
     <div class="bgimg"></div>
     <div class="tab-title">Engineering Courses</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)">×</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
       <h2>Engineering Projects</h2>
-      <p>Selected technical coursework and hands-on programming:<br>
-      - Ada interactive multiplication tables tool<br>
-      - Project-based learning in modeling/simulation<br>
-      - Studies in algorithms, data structures, and artificial intelligence.
-      </p>
+      <ul>
+        <li>Ada interactive multiplication tables tool</li>
+        <li>Project-based learning in modeling/simulation</li>
+        <li>Studies in algorithms, data structures, artificial intelligence</li>
+      </ul>
     </div>
     <div class="hint">Click to see more</div>
   </div>
@@ -145,10 +168,11 @@
     <div class="bgimg"></div>
     <div class="tab-title">Mobility</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)">×</button>
-      <h2>Mobility & Exchange</h2>
-      <p>Planning for potential international experiences or exchanges.<br>
-      Reflections on teamwork, adaptation, language, and global opportunities.
+      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
+      <h2>Mobility &amp; Exchange</h2>
+      <p>
+        Planning for potential international experiences or exchanges.<br>
+        Reflections on teamwork, adaptation, language, and global opportunities.
       </p>
     </div>
     <div class="hint">Click to see more</div>
@@ -157,22 +181,26 @@
     <div class="bgimg"></div>
     <div class="tab-title">Civic Engagement</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)">×</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
       <h2>Civic Engagement</h2>
-      <p>Involvement in social, creative, and environmental initiatives.<br>
-        Example: "King Kong Trial" theatre project, climate mural, collaborative workshops.
-      </p>
+      <ul>
+        <li>"King Kong Trial" theatre project</li>
+        <li>Climate mural, collaborative workshops</li>
+        <li>Participation in social, creative, and environmental initiatives</li>
+      </ul>
     </div>
     <div class="hint">Click to see more</div>
   </div>
   <div class="section sports" onclick="expandSection(this)">
     <div class="bgimg"></div>
-    <div class="tab-title">Sports & Activities</div>
+    <div class="tab-title">Sports &amp; Activities</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)">×</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
       <h2>Extracurricular Life</h2>
-      <p>Participation in sports, clubs, and personal development.<br>
-      Passionate about teamwork, energy, and diverse interests beyond academics.</p>
+      <ul>
+        <li>Participation in sports, clubs, and personal development</li>
+        <li>Teamwork, fitness, and interests beyond academics</li>
+      </ul>
     </div>
     <div class="hint">Click to see more</div>
   </div>
@@ -180,12 +208,13 @@
     <div class="bgimg"></div>
     <div class="tab-title">Career Development</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)">×</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
       <h2>Professional Growth</h2>
-      <p>
-        Explore my CV, career interests, and ambitions.<br>
-        Plans for internships, professional connections, and future areas in computer science.
-      </p>
+      <ul>
+        <li>CV, career interests, and ambitions</li>
+        <li>Plans for internships, professional connections</li>
+        <li>Future areas in computer science</li>
+      </ul>
     </div>
     <div class="hint">Click to see more</div>
   </div>
@@ -202,6 +231,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
