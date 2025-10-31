@@ -51,6 +51,8 @@
       transform: translate(-50%, -54%) scale(0.95);
       width: 480px; max-width: 92vw;
       min-height: 135px;
+      max-height: 80vh; /* Ensures content doesn't overflow viewport */
+      overflow-y: auto;  /* Scrollbar when lots of content */
       opacity: 0;
       z-index: 10;
       border-radius: 24px;
@@ -114,7 +116,11 @@
       font-family: 'Montserrat',Arial,sans-serif;
     }
     @media (max-width:700px) {
-      .tab-content { width: 99vw; padding:10vw 2vw; min-width:unset; }
+      .tab-content {
+        width: 99vw; padding:10vw 2vw; min-width:unset;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
       .tab-content h2 {font-size: 6vw;}
       .tab-title {padding: 18px;}
       .hint {font-size: 3vw;}
@@ -231,6 +237,4 @@
   </script>
 </body>
 </html>
-
-
 
