@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -28,13 +27,25 @@
       filter: blur(0.3px) brightness(0.84) saturate(1.07);
       transition: filter 0.5s;
     }
-    /* Unique background for each tab below */
-          .section.home .bgimg { background-image: url('fotos/1-2.jpg'); }
-      .section.eng .bgimg { background-image: url('fotos/2.jpg'); }
-      .section.mobility .bgimg { background-image: url('fotos/3.jpg'); }
-      .section.civic .bgimg { background-image: url('fotos/4.jpg'); }
-      .section.sports .bgimg { background-image: url('fotos/5.jpg'); }
-      .section.career .bgimg { background-image: url('fotos/6.jpg'); }
+    /* Unique background for each tab using Drive images */
+    .section.home .bgimg {
+      background-image: url('https://drive.google.com/thumbnail?id=1d3dLqkg3RlZYHkQWmO9s9m0V6mw-ehKn');
+    }
+    .section.eng .bgimg {
+      background-image: url('https://drive.google.com/thumbnail?id=1QzghwnwuXogDUnUM2kaLJ2U-xOZ4wgfC');
+    }
+    .section.mobility .bgimg {
+      background-image: url('https://drive.google.com/thumbnail?id=1gYe9-cu1lkes-rR9VOFiPj4dOz3Iz40s');
+    }
+    .section.civic .bgimg {
+      background-image: url('https://drive.google.com/thumbnail?id=1Cp1dhCsPEmR2--cPEGVj4O7XGV_wIx2-');
+    }
+    .section.sports .bgimg {
+      background-image: url('https://drive.google.com/thumbnail?id=1LOKnhQ9KkBTRsepalQWn4DWdV9-cSJPz');
+    }
+    .section.career .bgimg {
+      background-image: url('https://drive.google.com/thumbnail?id=144o9Rh4wv_fTv9cZ5F6hoZ7CPKiU2xmf');
+    }
 
     .tab-title {
       position: relative; z-index:4; color: #fff;
@@ -58,7 +69,6 @@
       pointer-events: none;
     }
 
-    /* Sophisticated card: glassmorphism, neon border, slight shadow, soft curves */
     .tab-content {
       position: absolute;
       left: 50%; top: 52%;
@@ -68,14 +78,11 @@
       opacity: 0;
       z-index: 10;
       border-radius: 34px 90px 44px 90px / 75px 34px 90px 55px;
-      /* Glass and color border effect */
       background: linear-gradient(120deg,rgba(255,255,255,0.60) 65%,rgba(196,240,255,0.46));
       box-shadow: 0 16px 88px #0007, 0 1px 32px #629ae033;
       border: 3.5px solid;
       border-image: linear-gradient(135deg, #6c63ff 25%, #88ffd8 80%, #fc46aa 100%) 1;
-      /* Glassmorphism */
       backdrop-filter: blur(16px) saturate(1.09);
-      /* Animations */
       display: flex; flex-direction: column; align-items: center;
       padding: 56px 38px 36px 38px;
       pointer-events: none;
@@ -90,7 +97,6 @@
       opacity: 1;
       transform: translate(-50%, -54%) scale(1);
       pointer-events: all;
-      /* On expand, morph to a larger rounder glass shape */
       border-radius: 75px 180px 95px 150px / 140px 64px 135px 115px;
       box-shadow: 0 9px 64px #000b, 0 1px 32px #44c7e055;
     }
@@ -231,6 +237,7 @@
   </script>
 </body>
 </html>
+
 
 
 
