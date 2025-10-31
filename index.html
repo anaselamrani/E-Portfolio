@@ -27,25 +27,12 @@
       filter: blur(0.3px) brightness(0.84) saturate(1.07);
       transition: filter 0.5s;
     }
-    /* High-res Imgur backgrounds */
-    .section.home .bgimg {
-      background-image: url('https://i.imgur.com/xl0t1Y2.jpeg');
-    }
-    .section.eng .bgimg {
-      background-image: url('https://i.imgur.com/fV2lieU.jpeg');
-    }
-    .section.mobility .bgimg {
-      background-image: url('https://i.imgur.com/IqD8apH.jpeg');
-    }
-    .section.civic .bgimg {
-      background-image: url('https://i.imgur.com/XkhkH2R.jpeg');
-    }
-    .section.sports .bgimg {
-      background-image: url('https://i.imgur.com/pEW0AAI.jpeg');
-    }
-    .section.career .bgimg {
-      background-image: url('https://i.imgur.com/hs9p7lW.jpeg');
-    }
+    .section.home .bgimg { background-image: url('https://i.imgur.com/xl0t1Y2.jpeg'); }
+    .section.eng .bgimg { background-image: url('https://i.imgur.com/fV2lieU.jpeg'); }
+    .section.mobility .bgimg { background-image: url('https://i.imgur.com/IqD8apH.jpeg'); }
+    .section.civic .bgimg { background-image: url('https://i.imgur.com/XkhkH2R.jpeg'); }
+    .section.sports .bgimg { background-image: url('https://i.imgur.com/pEW0AAI.jpeg'); }
+    .section.career .bgimg { background-image: url('https://i.imgur.com/hs9p7lW.jpeg'); }
     .tab-title {
       position: relative; z-index:4; color: #fff;
       font-family: 'Montserrat', Arial, sans-serif; font-weight: 900;
@@ -66,8 +53,6 @@
       filter: blur(30px);
       pointer-events: none;
     }
-
-    /* Sophisticated card styling */
     .tab-content {
       position: absolute;
       left: 50%; top: 52%;
@@ -103,7 +88,6 @@
       letter-spacing: .5px; text-align: center;
       font-weight: 900;
     }
-    /* Updated close button - white border, red fill, white X */
     .tab-content .close-btn {
       position: absolute; top: 18px; right: 22px; width: 38px; height: 38px;
       border-radius: 50%; border: 2px solid #fff;
@@ -157,7 +141,14 @@
       <h2>Welcome!</h2>
       <p>
         I'm Anas EL AMRANY, Computer Science Engineering Student at ENSEEIHT.<br>
-        Explore this interactive portfolio to access my CVs in French and English, and watch my elevator pitch video.
+        Explore this interactive portfolio to access my CVs in French and English:
+        <br>
+        <a href="CV_French.pdf" target="_blank">Download my CV (French)</a>
+        <br>
+        <a href="CV_English.pdf" target="_blank">Download my CV (English)</a>
+        <br>
+        And watch my elevator pitch video.
+        <br>
         This ePortfolio showcases my development in engineering, connects with professors and employers, and highlights my academic journey.
       </p>
     </div>
@@ -170,13 +161,12 @@
       <button class="close-btn" onclick="closeSection(event)" title="Close" aria-label="Close">&times;</button>
       <h2>Engineering Projects</h2>
       <p>
-      <u1> 
-        <li>Developed an interactive Ada tool for practicing multiplication tables, emphasizing code quality and reliability.</li>
-        <li>Learned data analysis and image processing in MATLAB, including histogram visualization and edge detection.</li>
+        <ul>
+          <li>Developed an interactive Ada tool for practicing multiplication tables, emphasizing code quality and reliability.</li>
+          <li>Learned data analysis and image processing in MATLAB, including histogram visualization and edge detection.</li>
+        </ul>
         These experiences strengthened my programming fundamentals, attention to detail, and ability to apply theory to practical challenges.
-      </u1>
       </p>
-
     </div>
     <div class="hint">Click to see more</div>
   </div>
@@ -243,17 +233,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
