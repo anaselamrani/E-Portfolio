@@ -67,7 +67,7 @@
       pointer-events: none;
     }
 
-    /* Updated tab-content style */
+    /* Sophisticated card styling */
     .tab-content {
       position: absolute;
       left: 50%; top: 52%;
@@ -94,6 +94,7 @@
     .section.expanded .tab-content {
       opacity: 1;
       transform: translate(-50%, -54%) scale(1);
+      pointer-events: all;
       box-shadow: 0 12px 60px #1a243e37, 0 2px 16px #283c5a25;
     }
     .tab-content h2 {
@@ -102,19 +103,27 @@
       letter-spacing: .5px; text-align: center;
       font-weight: 900;
     }
+    /* Updated close button - white border, red fill, white X */
     .tab-content .close-btn {
-      position: absolute; top: 18px; right: 22px; width: 34px; height: 34px;
-      border-radius: 50%; border: 1.5px solid #c7d5e2;
-      background: #f6f9fbef;
-      color: #233c72; font-size: 1.2em;
+      position: absolute; top: 18px; right: 22px; width: 38px; height: 38px;
+      border-radius: 50%; border: 2px solid #fff;
+      background: #e63946;
+      color: #fff; font-size: 1.48em;
       box-shadow: 0 2px 10px #a0c6e035;
       cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: background 0.17s, color 0.17s, border 0.22s;
+      transition: background 0.17s, color 0.17s, border 0.22s, transform 0.18s;
       font-weight: 700; z-index: 30;
+      outline: none;
     }
     .tab-content .close-btn:hover {
-      background: #dde6fa; color: #314e99; border-color: #a4c8f6;
+      background: #a4161a;
+      color: #fff;
+      border-color: #fff;
       transform: scale(1.1);
+    }
+    .tab-content .close-btn:focus {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
     }
     .tab-content p, .tab-content ul {
       font-size: 1.15em; color: #252d40; text-align:left;
@@ -135,6 +144,7 @@
       .tab-content h2 {font-size: 6vw;}
       .tab-title {padding: 18px;}
       .hint {font-size: 3vw;}
+      .tab-content .close-btn {right: 8vw; top:10vw;}
     }
   </style>
 </head>
@@ -143,7 +153,7 @@
     <div class="bgimg"></div>
     <div class="tab-title">Home</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close" aria-label="Close">&times;</button>
       <h2>Welcome!</h2>
       <p>
         I'm Anas EL AMRANY, Computer Science Engineering Student at ENSEEIHT.<br>
@@ -156,7 +166,7 @@
     <div class="bgimg"></div>
     <div class="tab-title">Engineering Courses</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close" aria-label="Close">&times;</button>
       <h2>Engineering Projects</h2>
       <ul>
         <li>Ada interactive multiplication tables tool</li>
@@ -170,7 +180,7 @@
     <div class="bgimg"></div>
     <div class="tab-title">Mobility</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close" aria-label="Close">&times;</button>
       <h2>Mobility &amp; Exchange</h2>
       <p>
         Planning for potential international experiences or exchanges.<br>
@@ -183,7 +193,7 @@
     <div class="bgimg"></div>
     <div class="tab-title">Civic Engagement</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close" aria-label="Close">&times;</button>
       <h2>Civic Engagement</h2>
       <ul>
         <li>"King Kong Trial" theatre project</li>
@@ -197,7 +207,7 @@
     <div class="bgimg"></div>
     <div class="tab-title">Sports &amp; Activities</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close" aria-label="Close">&times;</button>
       <h2>Extracurricular Life</h2>
       <ul>
         <li>Participation in sports, clubs, and personal development</li>
@@ -210,7 +220,7 @@
     <div class="bgimg"></div>
     <div class="tab-title">Career Development</div>
     <div class="tab-content">
-      <button class="close-btn" onclick="closeSection(event)" title="Close">&times;</button>
+      <button class="close-btn" onclick="closeSection(event)" title="Close" aria-label="Close">&times;</button>
       <h2>Professional Growth</h2>
       <ul>
         <li>CV, career interests, and ambitions</li>
@@ -228,12 +238,11 @@
     }
     function closeSection(event) {
       event.stopPropagation();
-      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('expanded'));
+      event.target.closest('.section').classList.remove('expanded');
     }
   </script>
 </body>
 </html>
-
 
 
 
